@@ -1,12 +1,14 @@
-var date = new Date('May 01, 2022 00:00:00')
-var day
-day = date.getDate()
+var date_creation = new Date('August 01, 2022 00:00:00')
+var date
+date = date_creation.getDate()
+var weekdays
+weekdays = date_creation.getDay()
 var month
-month = date.getMonth()
+month = date_creation.getMonth()
 var date_real = new Date()
-var day_real
-var day_real_help
-day_real = date_real.toLocaleDateString('en-GB', { day: 'numeric' })
+var date_real
+var date_real_help
+date_real = date_real.toLocaleDateString('en-GB', { day: 'numeric' })
 var months_real = new Date()
 var month_real
 month_real = months_real.toLocaleDateString('en-GB', { month: 'numeric' })
@@ -17,10 +19,16 @@ year_real = years_real.toLocaleDateString('en-GB', { year: 'numeric' })
 var button = document.getElementsByClassName("button")
 var buttons = document.getElementById("buttons")
 var months = document.getElementById("months")
-var d = day
+var d = date
+var w = weekdays
 var m = month + 1
-var day_real_help = day_real
+var date_real_help = date_real
 function Button_Range() {
+    if(w!=7){
+        for(w; w != 0; w--){
+            buttons.innerHTML += "<div class='date-empty'></div>"
+        }
+    }
     for (m; m < month_real; m++) {
         if(m==2 && year_real%4 == 0){
             d -=28
@@ -35,15 +43,15 @@ function Button_Range() {
             d -=31
         }
     }
-    if(day_real_help == day_real){
+    if(date_real_help == date_real){
     }
-    else if (day_real_help == day_real+1){
+    else if (date_real_help == date_real+1){
     }
-    else if (day_real_help != day_real+1){
-        k -= day_real_help
+    else if (date_real_help != date_real+1){
+        k -= date_real_help
     }
-    for (d; d <= day_real; d++) {
+    for (d; d <= date_real; d++) {
         buttons.innerHTML += "<button class='button'></button>"
     }
-    day_real_help = day_real
+    date_real_help = date_real
 }
