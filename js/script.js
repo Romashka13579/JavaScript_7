@@ -82,7 +82,8 @@ function Button_Range() {
     for (d; d <= date_real; d++){
         d1--
         buttoncount.push(200)
-        buttons.innerHTML += "<button class='button' id="+d1+" onclick='Color("+d1+")' onpointerover='Button_Help("+d1+") onpointerout='Button_Delete("+d1+")'></button>"
+        buttons.innerHTML += "<button class='button' id="+d1+" onclick='Color("+d1+")'></button>"
+        //onpointerover='Button_Help("+d1+")' onpointerout='Button_Delete("+d1+")'
     }
     date_real_help = date_real
 }
