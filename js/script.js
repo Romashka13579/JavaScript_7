@@ -43,7 +43,7 @@ var d = date
 var w = weekdays
 
 var buttoncount = [];
-var d1 = date
+var d1 = new Number(date_real)
 
 function Button_Range() {
     for (m_r; m_r > m_1 - 1; m_r--) {
@@ -77,6 +77,7 @@ function Button_Range() {
     else if (date_real_help == date_real + 1) {
     }
     else if (date_real_help != date_real + 1) {
+        d1 += date_real_help
         d -= date_real_help
     }
     for (d; d <= date_real; d++){
@@ -87,6 +88,7 @@ function Button_Range() {
     }
     date_real_help = date_real
 }
+
 function Color(d1){
     var button_id = document.getElementById(""+d1+"")
     rgb2 = buttoncount[d1]

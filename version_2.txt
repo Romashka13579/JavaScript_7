@@ -105,3 +105,6 @@ function Button_Range() {
     }
     date_real_help = date_real
 }
+
+
+<div class='button-help'></div>
